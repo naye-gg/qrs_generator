@@ -117,9 +117,10 @@ def menu_interactivo():
     print("\n1. Generar QR simple")
     print("2. Generar QR personalizado (colores)")
     print("3. Generar QR con logo")
-    print("4. Salir")
+    print("4. QR Avanzado (estilos y gradientes) 🎨")
+    print("5. Salir")
     
-    opcion = input("\nSelecciona una opción (1-4): ")
+    opcion = input("\nSelecciona una opción (1-5): ")
     
     if opcion == "1":
         datos = input("Ingresa el texto o URL: ")
@@ -146,6 +147,16 @@ def menu_interactivo():
         generar_qr_con_logo(datos, ruta_logo, nombre)
         
     elif opcion == "4":
+        # Importar y ejecutar el módulo avanzado
+        try:
+            import qr_generator_advanced
+            qr_generator_advanced.menu_avanzado()
+        except ImportError:
+            print("✗ Error: El módulo avanzado no está disponible")
+        except Exception as e:
+            print(f"✗ Error: {e}")
+        
+    elif opcion == "5":
         print("¡Hasta pronto!")
         return
     else:

@@ -1,12 +1,15 @@
 # Generador de Códigos QR 🔲
 
-Un generador de códigos QR en Python con múltiples opciones de personalización.
+Un generador de códigos QR en Python con múltiples opciones de personalización y estilos avanzados.
 
 ## 📋 Características
 
 - ✅ Generar códigos QR simples
 - ✅ Códigos QR personalizados con colores
 - ✅ Códigos QR con logo central
+- ✅ **NUEVO:** Diferentes estilos de módulos (cuadrados, círculos, redondeados, barras)
+- ✅ **NUEVO:** Gradientes de colores (radial, horizontal, vertical)
+- ✅ **NUEVO:** Combinación de estilos y logos
 - ✅ Menú interactivo fácil de usar
 - ✅ Corrección de errores configurable
 
@@ -26,6 +29,20 @@ pip install -r requirements.txt
 Ejecuta el script y sigue el menú:
 ```bash
 python qr_generator.py
+```
+
+### Generador Avanzado con Estilos
+
+Para acceder directamente a las funciones avanzadas:
+```bash
+python qr_generator_advanced.py
+```
+
+### Ver Demostración de Estilos
+
+Genera ejemplos de todos los estilos disponibles:
+```bash
+python demo_estilos.py
 ```
 
 ### Uso Programático
@@ -51,10 +68,13 @@ generar_qr_con_logo("https://miempresa.com", "logo.png", "qr_empresa.png")
 
 ```
 qrs_generator/
-├── qr_generator.py      # Script principal
-├── requirements.txt     # Dependencias
-├── README.md           # Este archivo
-└── qr_codes/           # Carpeta donde se guardan los QR (se crea automáticamente)
+├── qr_generator.py           # Script principal con menú
+├── qr_generator_advanced.py  # Generador con estilos avanzados ✨
+├── demo_estilos.py           # Script de demostración
+├── requirements.txt          # Dependencias
+├── README.md                 # Este archivo
+└── qr_codes/                 # Carpeta de códigos QR generados
+    └── demos/                # Ejemplos de estilos
 ```
 
 ## 🎨 Ejemplos de Uso
@@ -82,6 +102,50 @@ generar_qr_con_logo(
     "qr_empresa.png"
 )
 ```
+
+### 4. Código QR con esquinas redondeadas ✨
+```python
+from qr_generator_advanced import generar_qr_con_estilo
+
+generar_qr_con_estilo(
+    "https://ejemplo.com",
+    "qr_redondeado.png",
+    estilo_modulo="redondeado",
+    color_frente="darkblue",
+    color_fondo="lightblue"
+)
+```
+
+### 5. Código QR con gradiente radial 🌈
+```python
+from qr_generator_advanced import generar_qr_gradiente
+
+generar_qr_gradiente(
+    "¡Hola!",
+    "qr_gradiente.png",
+    tipo_gradiente="radial",
+    color_centro="blue",
+    color_borde="purple",
+    color_fondo="white",
+    estilo_modulo="circulo"
+)
+```
+
+## 📐 Estilos de Módulos Disponibles
+
+- **cuadrado** - Cuadrados sólidos (clásico)
+- **cuadrado_gap** - Cuadrados con espacios entre ellos
+- **circulo** - Puntos circulares
+- **redondeado** - Cuadrados con esquinas redondeadas (recomendado)
+- **barras_v** - Barras verticales
+- **barras_h** - Barras horizontales
+
+## 🎨 Tipos de Gradiente
+
+- **radial** - Del centro hacia los bordes
+- **horizontal** - De izquierda a derecha
+- **vertical** - De arriba hacia abajo
+- **cuadrado** - Gradiente en forma de cuadrado
 
 ## 🔧 Parámetros de Corrección de Errores
 
